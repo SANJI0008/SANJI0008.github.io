@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal portfolio of Ishan Nepal – BBS student, 19 years old." />
+  <meta name="author" content="Ishan Nepal" />
+  <title>Ishan Nepal | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',300:'#7dd3fc',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',800:'#075985',900:'#0c4a6e' },
+            accent: { 400:'#a78bfa',500:'#8b5cf6',600:'#7c3aed' }
+          },
+          fontFamily: { sans: ['Inter','system-ui','sans-serif'], display: ['Poppins','system-ui','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>IN</text></svg>" />
+</head>
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-500 font-sans antialiased">
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200/60 dark:border-gray-800/60">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="font-display font-bold text-xl tracking-tight text-primary-600 dark:text-primary-400">Ishan<span class="text-gray-900 dark:text-white">.</span></a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#home" class="nav-link text-sm font-medium text-gray-700 dark:text-gray-300">Home</a>
+          <a href="#about" class="nav-link text-sm font-medium text-gray-700 dark:text-gray-300">About</a>
+          <a href="#skills" class="nav-link text-sm font-medium text-gray-700 dark:text-gray-300">Skills</a>
+          <a href="#projects" class="nav-link text-sm font-medium text-gray-700 dark:text-gray-300">Projects</a>
+          <a href="#contact" class="nav-link text-sm font-medium text-gray-700 dark:text-gray-300">Contact</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800">
+            <svg id="icon-sun" class="w-5 h-5 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+            <svg id="icon-moon" class="w-5 h-5 block dark:hidden text-gray-700" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          </button>
+          <button id="mobile-menu-btn" aria-label="Open menu" class="md:hidden p-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden pb-4 mt-2 pt-3 space-y-1">
+        <a href="#home" class="block px-3 py-2.5 rounded-xl text-sm font-medium">Home</a>
+        <a href="#about" class="block px-3 py-2.5 rounded-xl text-sm font-medium">About</a>
+        <a href="#skills" class="block px-3 py-2.5 rounded-xl text-sm font-medium">Skills</a>
+        <a href="#projects" class="block px-3 py-2.5 rounded-xl text-sm font-medium">Projects</a>
+        <a href="#contact" class="block px-3 py-2.5 rounded-xl text-sm font-medium">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+      <canvas id="particles-canvas" class="absolute inset-0"></canvas>
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <p class="text-primary-600 dark:text-primary-400 font-medium tracking-wide uppercase text-sm reveal">Hello, I'm</p>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight reveal reveal-delay-1">Ishan Nepal</h1>
+            <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 font-light min-h-[2rem] reveal reveal-delay-2"><span id="typing-text"></span><span class="typing-cursor"></span></p>
+            <p class="text-gray-500 dark:text-gray-400 max-w-lg leading-relaxed reveal reveal-delay-3">Currently in my 2nd year of Bachelor of Business Studies at Kankai Adarsha Campus. Passionate about learning, growth, and building meaningful connections.</p>
+            <div class="flex flex-wrap gap-4 pt-2 reveal reveal-delay-4">
+              <a href="#contact" class="btn-primary inline-flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-xl">Get in Touch</a>
+              <a href="#projects" class="btn-secondary inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 font-medium rounded-xl">View Projects</a>
+            </div>
+          </div>
+          <div class="hidden lg:flex justify-center reveal reveal-delay-2">
+            <div class="relative">
+              <div class="avatar-glow w-72 h-72 rounded-full bg-gradient-to-br from-primary-400 via-accent-500 to-primary-600 opacity-25 blur-3xl absolute inset-0"></div>
+              <div class="hero-orb relative w-64 h-64 rounded-full bg-gradient-to-br from-primary-500 to-accent-600 flex items-center justify-center text-white text-6xl font-display font-bold shadow-2xl">IN</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="py-24 bg-gray-50/80 dark:bg-gray-900/40">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal"><h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">About Me</h2><div class="w-16 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div></div>
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div class="space-y-6 reveal">
+            <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">My Story</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">I'm Ishan Nepal, a 19-year-old student currently pursuing my Bachelor of Business Studies (BBS) in the 2nd year at <strong>Kankai Adarsha Campus</strong>. I completed my schooling at <strong>Kankai School</strong>.</p>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Growing up, I've always been curious about how businesses work, how people make decisions, and how small ideas can grow into something meaningful.</p>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Outside of studies, I enjoy connecting with people, exploring new ideas, and continuously improving myself. I believe in hard work, honesty, and lifelong learning.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-8 shadow-sm reveal reveal-delay-2">
+            <h3 class="text-xl font-semibold mb-6">Quick Facts</h3>
+            <ul class="space-y-4 text-sm">
+              <li><p class="font-medium">Age</p><p class="text-gray-500 dark:text-gray-400">19 years old</p></li>
+              <li><p class="font-medium">Marital Status</p><p class="text-gray-500 dark:text-gray-400">Unmarried</p></li>
+              <li><p class="font-medium">Schooling</p><p class="text-gray-500 dark:text-gray-400">Kankai School</p></li>
+              <li><p class="font-medium">Current Studies</p><p class="text-gray-500 dark:text-gray-400">BBS 2nd Year – Kankai Adarsha Campus</p></li>
+              <li><p class="font-medium">Philosophy</p><p class="text-gray-500 dark:text-gray-400">Learn continuously, stay curious, and grow every day.</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="skills" class="py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+          <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Skills & Expertise</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+          <div class="skill-card p-6 rounded-2xl bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700/80"><h3 class="font-semibold text-lg mb-2">Business Fundamentals</h3><p class="text-sm text-gray-500 dark:text-gray-400">Understanding core business concepts, accounting principles, and management practices.</p></div>
+          <div class="skill-card p-6 rounded-2xl bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700/80"><h3 class="font-semibold text-lg mb-2">Communication</h3><p class="text-sm text-gray-500 dark:text-gray-400">Clear written and verbal communication, active listening, and presenting ideas effectively.</p></div>
+          <div class="skill-card p-6 rounded-2xl bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700/80"><h3 class="font-semibold text-lg mb-2">Teamwork & Collaboration</h3><p class="text-sm text-gray-500 dark:text-gray-400">Working effectively in groups, supporting peers, and contributing to shared goals.</p></div>
+          <div class="skill-card p-6 rounded-2xl bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700/80"><h3 class="font-semibold text-lg mb-2">Digital Literacy</h3><p class="text-sm text-gray-500 dark:text-gray-400">Comfortable with MS Office tools, online research, and basic productivity software.</p></div>
+          <div class="skill-card p-6 rounded-2xl bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700/80"><h3 class="font-semibold text-lg mb-2">Problem Solving</h3><p class="text-sm text-gray-500 dark:text-gray-400">Analyzing situations, thinking critically, and finding practical solutions.</p></div>
+          <div class="skill-card p-6 rounded-2xl bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700/80"><h3 class="font-semibold text-lg mb-2">Continuous Learning</h3><p class="text-sm text-gray-500 dark:text-gray-400">Always curious and open to new knowledge, skills, and personal growth opportunities.</p></div>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="py-24 bg-gray-50/80 dark:bg-gray-900/40">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal"><h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Projects & Experience</h2></div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
+          <article class="project-card bg-white dark:bg-gray-800/80 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700/80"><div class="project-image h-40 bg-gradient-to-br from-primary-500 to-primary-700"></div><div class="p-6"><h3 class="font-semibold text-lg mb-2">BBS Academic Journey</h3><p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Currently in 2nd year of Bachelor of Business Studies at Kankai Adarsha Campus.</p></div></article>
+          <article class="project-card bg-white dark:bg-gray-800/80 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700/80"><div class="project-image h-40 bg-gradient-to-br from-accent-500 to-purple-700"></div><div class="p-6"><h3 class="font-semibold text-lg mb-2">School Foundation</h3><p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Completed schooling at Kankai School.</p></div></article>
+          <article class="project-card bg-white dark:bg-gray-800/80 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700/80"><div class="project-image h-40 bg-gradient-to-br from-emerald-500 to-teal-700"></div><div class="p-6"><h3 class="font-semibold text-lg mb-2">Personal Growth</h3><p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Continuously working on self-improvement and preparing for future opportunities.</p></div></article>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal"><h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Get In Touch</h2></div>
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div class="space-y-4 reveal">
+            <a href="mailto:ishannepal528@gmail.com" class="block hover:text-primary-600">ishannepal528@gmail.com</a>
+            <a href="tel:+9779749211964" class="block hover:text-primary-600">+977 9749211964</a>
+            <a href="https://www.instagram.com/ok_whatever_lol" target="_blank" rel="noopener noreferrer" class="block hover:text-primary-600">@ok_whatever_lol</a>
+          </div>
+          <div class="glass-card rounded-2xl p-8 reveal reveal-delay-2">
+            <form id="contact-form" class="space-y-5">
+              <input type="text" id="name" name="name" required placeholder="Your Name" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-600 bg-gray-50/80 dark:bg-gray-900/50" />
+              <input type="email" id="email" name="email" required placeholder="Your Email" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-600 bg-gray-50/80 dark:bg-gray-900/50" />
+              <textarea id="message" name="message" rows="4" required placeholder="Message" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-600 bg-gray-50/80 dark:bg-gray-900/50"></textarea>
+              <button type="submit" class="btn-primary w-full py-3 px-6 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-xl">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t border-gray-200/80 dark:border-gray-800/80 py-8">
+    <div class="max-w-6xl mx-auto px-4 text-sm text-gray-500">© <span id="year"></span> Ishan Nepal</div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
